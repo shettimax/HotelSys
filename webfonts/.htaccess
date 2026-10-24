@@ -1,0 +1,13 @@
+# Allow access to font files
+<FilesMatch "\.(eot|woff|woff2|ttf|svg|otf)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Cache-Control "public, max-age=31536000"
+</FilesMatch>
+
+# Fix MIME types for fonts
+AddType application/vnd.ms-fontobject .eot
+AddType font/ttf .ttf
+AddType font/otf .otf
+AddType font/woff .woff
+AddType font/woff2 .woff2
+AddType image/svg+xml .svg

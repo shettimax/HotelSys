@@ -1,0 +1,204 @@
+/* /css/print.css - Print styles for invoice */
+
+/* Print only for invoice pages */
+@media print {
+    /* Hide everything by default */
+    body * {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* Reset body */
+    body {
+        background: white !important;
+        color: black !important;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 20px !important;
+    }
+    
+    /* Show only print sections */
+    .print-guest-section,
+    .print-booking-section,
+    .print-header-section,
+    .print-guest-section *,
+    .print-booking-section *,
+    .print-header-section * {
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    /* Container styling */
+    .print-container {
+        max-width: 800px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        background: white !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    
+    /* Header section */
+    .print-header-section {
+        text-align: center !important;
+        margin-bottom: 30px !important;
+        padding-bottom: 20px !important;
+        border-bottom: 2px solid #000 !important;
+    }
+    
+    .print-header-section h2 {
+        font-size: 24pt !important;
+        margin: 0 0 10px 0 !important;
+        color: #000 !important;
+        font-weight: bold !important;
+    }
+    
+    .print-header-section h3 {
+        font-size: 18pt !important;
+        margin: 0 0 15px 0 !important;
+        color: #333 !important;
+        font-weight: normal !important;
+    }
+    
+    .print-header-section p {
+        margin: 5px 0 !important;
+        color: #666 !important;
+    }
+    
+    /* Guest Information Section */
+    .print-guest-section {
+        margin-bottom: 30px !important;
+        padding: 20px !important;
+        border: 1px solid #ccc !important;
+        page-break-inside: avoid !important;
+        background: white !important;
+    }
+    
+    .print-guest-section h5 {
+        background: #f5f5f5 !important;
+        padding: 10px 15px !important;
+        margin: -20px -20px 20px -20px !important;
+        border-bottom: 1px solid #ddd !important;
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        color: #000 !important;
+    }
+    
+    /* Booking Details Section */
+    .print-booking-section {
+        padding: 20px !important;
+        border: 1px solid #ccc !important;
+        page-break-inside: avoid !important;
+        background: white !important;
+    }
+    
+    .print-booking-section h5 {
+        background: #f5f5f5 !important;
+        padding: 10px 15px !important;
+        margin: -20px -20px 20px -20px !important;
+        border-bottom: 1px solid #ddd !important;
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        color: #000 !important;
+    }
+    
+    /* Data rows styling */
+    .print-data-row {
+        display: flex !important;
+        margin-bottom: 12px !important;
+        align-items: flex-start !important;
+    }
+    
+    .print-label {
+        font-weight: bold !important;
+        min-width: 140px !important;
+        color: #000 !important;
+        padding-right: 10px !important;
+    }
+    
+    .print-value {
+        flex: 1 !important;
+        color: #333 !important;
+    }
+    
+    /* Amount styling */
+    .print-amount {
+        font-weight: bold !important;
+        color: #000 !important;
+    }
+    
+    /* Badge styling for print */
+    .print-badge {
+        display: inline-block !important;
+        padding: 3px 8px !important;
+        background: #f0f0f0 !important;
+        border: 1px solid #ccc !important;
+        font-size: 10pt !important;
+        margin: 0 5px 5px 0 !important;
+    }
+    
+    /* Footer */
+    .print-footer {
+        margin-top: 40px !important;
+        text-align: center !important;
+        font-size: 10pt !important;
+        color: #666 !important;
+        border-top: 1px solid #ccc !important;
+        padding-top: 20px !important;
+    }
+    
+    /* Hide interactive elements */
+    .btn, 
+    button, 
+    a:not(.print-link),
+    .modal,
+    .dropdown,
+    .form-control,
+    input,
+    select,
+    textarea {
+        display: none !important;
+    }
+    
+    /* Hide specific sections */
+    .no-print,
+    .alert,
+    .terminal-feed:not(.print-section),
+    .table,
+    .col-md-6,
+    .row {
+        display: none !important;
+    }
+    
+    /* Force page breaks if needed */
+    .page-break {
+        page-break-before: always !important;
+    }
+}
+
+/* Specific invoice print layout */
+@media print and (min-width: 768px) {
+    .print-two-column {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 20px !important;
+    }
+    
+    .print-two-column > div {
+        flex: 1 !important;
+        min-width: 300px !important;
+    }
+}
+
+/* Landscape mode for wider content */
+@media print and (orientation: landscape) {
+    body {
+        padding: 15px !important;
+    }
+    
+    .print-container {
+        max-width: 1000px !important;
+    }
+}
