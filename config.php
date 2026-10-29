@@ -6,7 +6,7 @@ return array (
     'host' => '127.0.0.1',
     'dbname' => 'xx2',
     'user' => 'root',
-    'pass' => 'kir@1337',
+    'pass' => '',
     'charset' => 'utf8mb4',
   ),
   'base_url' => '/hotel-system',
